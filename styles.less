@@ -27,6 +27,12 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header {
   padding: 2rem 1rem 0;
   background-color: var(--dark-purple);
@@ -34,6 +40,10 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  @media (min-width: 760px) {
+    padding: 2.31rem 2.44rem 0;
+  }
 
   &__top-area {
     display: flex;
@@ -51,6 +61,13 @@
     font-family: Manrope;
     font-weight: 700;
     line-height: 2rem;
+    transition: all 500ms ease;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--eucalyptus);
+      transition: all 750ms ease;
+    }
   }
 
   h1 {
@@ -60,6 +77,12 @@
     font-family: Fraunces;
     text-align: center;
     margin: 4rem 0 2.5rem;
+
+    @media (min-width: 760px) {
+      font-size: 3.75rem;
+      line-height: 3.75rem;
+      padding: 0 6.5rem;
+    }
   }
 
   .phone-img {
@@ -83,6 +106,15 @@
   font-size: 1rem;
   font-weight: 700;
   background-color: var(--eucalyptus);
+  border: 2px solid var(--eucalyptus);
+  transition: all 500ms ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--dark-purple);
+    color: var(--eucalyptus);
+    transition: all 750ms ease;
+  }
 }
 
 .main-container {
@@ -108,6 +140,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 1.5rem;
 
       & span {
         display: flex;
@@ -120,7 +153,6 @@
         height: 3rem;
         border: 1px solid var(--davys-grey);
         border-radius: 50%;
-        margin-bottom: 1.5rem;
       }
 
       & h2 {
@@ -168,6 +200,35 @@
         color: var(--white);
         line-height: 1.75rem;
       }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  padding: 4.62rem 0 4rem;
+
+  .socials {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  svg {
+    cursor: pointer;
+
+    path {
+      transition: all 500ms ease;
+    }
+
+    &:hover path {
+      transition: all 750ms ease;
+      fill: var(--dark-purple);
     }
   }
 }
